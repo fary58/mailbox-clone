@@ -8,11 +8,7 @@ import Body from './components/Body'
 function App() {
   return (
     <div className='bg-[#F6F8FC] h-screen'>
-      <Navbar/>
-      <div className='flex'>
-      <Sidebar/>
-      <Inbox/>
-      </div>
+
     </div>
   )
 }
