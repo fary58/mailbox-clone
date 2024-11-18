@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import sendMail from "./slice";
+import appReducer from "./appSlice";
 
-export default configureStore({
+const store = configureStore({
   reducer: {
-    sendMail: sendMail,
+    app: appReducer,
   },
 });
+
+export default store;
