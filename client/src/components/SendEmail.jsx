@@ -1,23 +1,16 @@
 import React, { useState } from 'react'
 import { RxCross2 } from 'react-icons/rx'
 import { useDispatch, useSelector } from 'react-redux'
-import {setOpen } from '../redux/appSlice';
-// import toast from 'react-hot-toast';
-// import axios from 'axios';
+import { setOpen } from '../redux/appSlice';
+
 
 const SendEmail = () => {
-    const [formData, setFormData] = useState({
-        to:"",
-        subject:"",
-        message:""
-    })
-    // const {open, emails} = useSelector(store => store.app);
-    const dispatch = useDispatch();
-
-    const changeHandler = (e) => {
-        setFormData({...formData, [e.target.name]:e.target.value});
+    const changeHandler = () =>{
+        console.log("test")
     }
 
+    const {open, emails} = useSelector(store => store.app);
+    const dispatch = useDispatch();
 
 
     return (
@@ -28,10 +21,10 @@ const SendEmail = () => {
                     <RxCross2 size="20px" />
                 </div>
             </div>
-            <form /* onSubmit={submitHandler} */ className='flex flex-col p-3 gap-2'>
-             <input onChange={changeHandler} value={formData.to} name="to" type="text" placeholder='To' className='outline-none py-1'/>
-             <input onChange={changeHandler} value={formData.subject} name="subject" type="text" placeholder='Subject' className='outline-none py-1'/>
-             <textarea onChange={changeHandler} value={formData.message} name="message"  rows={'10'} cols={'30'} className='outline-none py-1'></textarea>
+            <form className='flex flex-col p-3 gap-2'>
+             <input name="to" type="text" placeholder='To' className='outline-none py-1'/>
+             <input name="subject" type="text" placeholder='Subject' className='outline-none py-1'/>
+             <textarea name="message"  rows={'10'} cols={'30'} className='outline-none py-1'></textarea>
              <button type='submit' className='bg-blue-700 rounded-full px-5 py-1 w-fit text-white'>Send</button>
             </form>
         </div>
