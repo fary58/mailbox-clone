@@ -22,10 +22,17 @@ const appRouter = createBrowserRouter([
         path: "/mail/:id",
         element: <Mail />
       },
-    ]
+      
+    ],
+
   },
   
-])
+],
+{
+  future: {
+    v7_startTransition: true, // Opt-in to v7's startTransition behavior
+  },
+})
 
 function App() {
   

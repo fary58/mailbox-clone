@@ -28,7 +28,7 @@ const SendEmail = () => {
                     <RxCross2 size="20px" />
                 </div>
             </div>
-            <form onSubmit={submitHandler} className='flex flex-col p-3 gap-2'>
+            <form /* onSubmit={submitHandler} */ className='flex flex-col p-3 gap-2'>
              <input onChange={changeHandler} value={formData.to} name="to" type="text" placeholder='To' className='outline-none py-1'/>
              <input onChange={changeHandler} value={formData.subject} name="subject" type="text" placeholder='Subject' className='outline-none py-1'/>
              <textarea onChange={changeHandler} value={formData.message} name="message"  rows={'10'} cols={'30'} className='outline-none py-1'></textarea>
