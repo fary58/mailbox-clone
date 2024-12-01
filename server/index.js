@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser')
 const app = express();
 require("dotenv").config();
 app.use(cors());
-import userRoute from "./routes/user.route.js";
-import emailRoute from "./routes/email.route.js";
+const userRoutes = require('./routes/userRoutes.js');
+const emailRoutes = require('./routes/userRoutes.js');
 
 
 
@@ -26,10 +26,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // routes
-app.use("/api/v1/user", require("./routes/userRoutes.js"));
-app.use("/api/v1/email", require("./routes/emailRoutes.js"));
-
-app.use("/api/v1/user", userRoute);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/email", emailRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);
