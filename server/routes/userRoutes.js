@@ -5,9 +5,9 @@ const router = express.Router();
 
 // Register endpoint
 router.post('/register', async (req, res) => {
+
     try {
         const { fullname, email, password } = req.body;
-
         // Validate request body
         if (!fullname || !email || !password) {
             return res.status(400).json({ message: "All fields are required", success: false });
