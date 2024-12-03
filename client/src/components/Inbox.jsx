@@ -3,7 +3,7 @@ import { MdCropSquare, MdInbox, MdKeyboardArrowLeft, MdKeyboardArrowRight } from
 import { FaCaretDown, FaUserFriends } from "react-icons/fa"
 import { IoMdMore, IoMdRefresh } from 'react-icons/io'
 import { GoTag } from "react-icons/go";
-// import Emails from './Emails';
+import Emails from './Emails';
 
 const mailType = [
     {
@@ -48,7 +48,7 @@ const Inbox = () => {
                     {
                         mailType.map((item, index) => {
                             return (
-                                <button key={index} onClick={() => setSelected(index)} className={` ${selected === index ? "border-b-4 border-b-blue-600 text-blue-600" : "border-b-4 border-b-transparent"} flex items-center gap-5 p-4 w-52 hover:bg-gray-100`}>
+                                <button onClick={() => setSelected(index)} className={` ${selected === index ? "border-b-4 border-b-blue-600 text-blue-600" : "border-b-4 border-b-transparent"} flex items-center gap-5 p-4 w-52 hover:bg-gray-100`}>
                                     {item.icon}
                                     <span>{item.text}</span>
                                 </button>
@@ -56,7 +56,7 @@ const Inbox = () => {
                         })
                     }
                 </div>
-                {/* <Emails/> */}
+                <Emails/>
             </div>
         </div>
     )

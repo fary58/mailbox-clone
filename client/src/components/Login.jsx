@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
@@ -47,7 +47,7 @@ const Login = () => {
                 <input onChange={changeHandler} value={input.email} name="email" type='email' placeholder='Email' className='border border-gray-400 rounded-md px-2 py-1' />
                 <input onChange={changeHandler} value={input.password} name="password" type='password' placeholder='Password' className='border border-gray-400 rounded-md px-2 py-1' />
                 <button type="submit" className='bg-gray-800 p-2 text-white my-2 rounded-md'>Login</button>
-                <p>Dont have an account? <Link to={"/signup"} className='text-blue-600'>Signup</Link></p>
+                <p>Don't have an account? <Link to={"/signup"} className='text-blue-600'>Signup</Link></p>
             </form>
         </div>
     )
